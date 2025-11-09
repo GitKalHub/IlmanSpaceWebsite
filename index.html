@@ -7,10 +7,15 @@
     
     <!-- Load Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Space Mono Font for a Space/Tech Theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <style>
         /* Custom styles for appearance (mostly Tailwind used) */
         body {
-            font-family: 'Inter', sans-serif;
+            /* Changed font to Space Mono */
+            font-family: 'Space Mono', monospace;
             background: none; 
         }
         /* Video Background Styling */
@@ -46,16 +51,27 @@
         }
         /* Ensure content pages are opaque white for readability over the video */
         .content-page {
-            background-color: rgba(255, 255, 255, 0.95);
+            /* --- UPDATED FOR DARK THEME --- */
+            /* Dark background (gray-900 equivalent) with slight transparency */
+            background-color: rgba(17, 24, 39, 0.80); 
+            color: #d1d5db; /* Default light text color (gray-300) */
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle futuristic border */
         }
+        
+        /* Update the header color inside the content page */
+        .content-page h2 {
+            color: #60a5fa; /* Blue-400 for headers */
+        }
+        
         /* Custom style for Text Outline/Stroke on content page titles */
         .text-stroke {
+            /* Changed stroke color to white for visibility on dark background */
             text-shadow: 
-                1px 1px 0 #000, 
-                -1px 1px 0 #000, 
-                1px -1px 0 #000, 
-                -1px -1px 0 #000;
+                1px 1px 0 #fff, 
+                -1px 1px 0 #fff, 
+                1px -1px 0 #fff, 
+                -1px -1px 0 #fff;
         }
 
         /* DYNAMIC GRADIENT STYLES  */
@@ -80,7 +96,7 @@
             /* 4. Add subtle white stroke for definition */
             -webkit-text-stroke: 0.5px #ffffff;
             text-stroke: 0.5px #ffffff;
-            font-weight: 900;
+            font-weight: 700; /* Adjusted for Space Mono */
             
             /* 5. Apply the shifting animation */
             animation: moving-gradient 4s ease infinite; /* 4 seconds for a smooth, slow shift */
@@ -125,11 +141,11 @@
     </video>
 
     <!-- Header & Navigation -->
-<header class="bg-gray-800 text-white p-4 shadow-xl fixed top-0 left-0 right-0 z-40">
+<header class="bg-gray-900 text-white p-4 shadow-2xl fixed top-0 left-0 right-0 z-40">
         <div class="container mx-auto flex justify-between items-center">
             
             <!-- Dynamic Gradient Text Applied Here -->
-            <h1 id="header-title" class="text-2xl font-extrabold cursor-default transition duration-300 header-gradient-text">WELCOME TO ILMAN SPACE 🛰️</h1>
+            <h1 id="header-title" class="text-2xl font-bold cursor-default transition duration-300 header-gradient-text">WELCOME TO ILMAN SPACE 🛰️</h1>
             
             <!-- Mobile Menu Toggle -->
 <button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -185,11 +201,12 @@
                     >
                     <div>
                         
-                        <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">About Me</h2>
-                        <p class="text-gray-700 leading-relaxed mb-3">
+                        <!-- Removed explicit text color (text-blue-900) to inherit light color from CSS rule -->
+<h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">About Me</h2>
+                        <p class="leading-relaxed mb-3">
                             Hello! My name is Mohamad Ilman Haikal Bin Mohd Zaid, I am currently 20 years old. I live in Kampung Ayer Puteh, Junjung, 09000 Kulim, Kedah. I enjoy solving complex problems and transforming innovative ideas into functional realities 💻.
                         </p>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="leading-relaxed">
                             I am currently studying at UiTM Merbok, Kedah, pursuing a Diploma in Information Management 📚. Alongside my technical interests, I have a love for simple joys in life. My favourite food is ayam gunting 🍗, and I love drinking Watermelon Juice 🍉. I’m also a big fan of the colours blue, black, and white, which reflect my calm, focused, and stylish personality 🎨.
                         </p>
                     </div>
@@ -213,12 +230,12 @@
             <!-- Skills Section (Initial hidden state with fade-in preparation) -->
 <section id="skills" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
-                <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">Skills</h2>
+                <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Skills</h2>
                 
                 
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Technical Skills 🛠️</h3>
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Technical Skills 🛠️</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Microsoft Office (Word, Excel, PowerPoint)</span>
                             <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Information Handling</span>
@@ -228,7 +245,7 @@
                     </div>
                     
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Soft Skills 🧠</h3>
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Soft Skills 🧠</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Time Management</span>
                             <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Communication</span>
@@ -238,7 +255,7 @@
                     </div>
                     
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Languages 💬</h3>
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Languages 💬</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Malay</span>
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm">English</span>
@@ -251,7 +268,7 @@
             <!-- Experience Section (Initial hidden state with fade-in preparation) -->
 <section id="experience" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
-                <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">Experience</h2>
+                <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Experience</h2>
                 <div class="space-y-6">
                     <div class="flex flex-col md:flex-row gap-6 items-start">
                         
@@ -262,9 +279,9 @@
                              onerror="this.onerror=null; this.src='https://placehold.co/128x128/3B82F6/ffffff?text=INTERN+PHOTO';"
                         >
                         <div>
-                            <h4 class="text-xl font-semibold">Intern 💼</h4>
-                            <p class="text-gray-500 italic">Pejabat Pendidikan Daerah Kulim Bandar Baharu (PPDKBB) | July 27 - Sep 18 2025</p>
-                            <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4">
+                            <h4 class="text-xl font-semibold text-gray-200">Intern 💼</h4>
+                            <p class="text-gray-400 italic">Pejabat Pendidikan Daerah Kulim Bandar Baharu (PPDKBB) | July 27 - Sep 18 2025</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1 ml-4">
                                 <li>Contributed to the development of digital and administrative solutions.</li>
                                 <li>Assisted in ICT support tasks and technical troubleshooting.</li>
                                 <li>Created Excel dashboards for efficient data management and reporting.</li>
@@ -278,21 +295,21 @@
             <!-- Education Section (Initial hidden state with fade-in preparation) -->
 <section id="education" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
-                <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">Education</h2>
+                <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Education</h2>
                 <div class="space-y-6">
                     
                     <div>
-                        <h4 class="text-xl font-semibold">Diploma in Information Management 🎓(In Progress)</h4>
-                        <p class="text-gray-500 italic">Universiti Teknologi MARA (UiTM) | 2023 - Present</p>
-                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4">
+                        <h4 class="text-xl font-semibold text-gray-200">Diploma in Information Management 🎓(In Progress)</h4>
+                        <p class="text-gray-400 italic">Universiti Teknologi MARA (UiTM) | 2023 - Present</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 ml-4">
                             <li>Currently pursuing a diploma with a focus on managing record, data management, and digital technologies.</li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h4 class="text-xl font-semibold">High School Graduate ✏️(SPM)</h4>
-                        <p class="text-gray-500 italic">Sekolah Menengah Kebangsaan Junjung | 2018 - 2023</p>
-                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 ml-4">
+                        <h4 class="text-xl font-semibold text-gray-200">High School Graduate ✏️(SPM)</h4>
+                        <p class="text-gray-400 italic">Sekolah Menengah Kebangsaan Junjung | 2018 - 2023</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 ml-4">
                             <li>Completed Sijil Pelajaran Malaysia (SPM).</li>
                             <li>Achieved results: 4A, 3B, 2C.</li>
                         </ul>
@@ -303,13 +320,13 @@
             <!-- Resume Section (Initial hidden state with fade-in preparation) -->
 <section id="resume" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
-                <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">My Resume</h2>
-                <p class="text-gray-700 leading-relaxed mb-6">
+                <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">My Resume</h2>
+                <p class="leading-relaxed mb-6">
                     For a formal overview of my qualifications, please download the PDF copy of my resume.
                 </p>
-                <div class="mt-6 p-6 border-2 border-dashed border-blue-300 bg-blue-50 rounded-lg text-center">
-                    <p class="text-gray-800 text-lg mb-4">
-                        <span class="font-bold">File:</span> Mohamad\_Ilman\_Haikal\_Resume.pdf
+                <div class="mt-6 p-6 border-2 border-dashed border-blue-600 bg-blue-900/30 rounded-lg text-center">
+                    <p class="text-gray-200 text-lg mb-4">
+                        <span class="font-bold block text-sm text-blue-400">File:</span> Mohamad\_Ilman\_Haikal\_Resume.pdf
                     </p>
                     
                     <a href="Mohamad_Ilman_Haikal_Resume.pdf" 
@@ -321,8 +338,8 @@
             <!-- Hobby Section (Initial hidden state with fade-in preparation) -->
 <section id="hobby" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                  
-                 <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">Hobby & Interests</h2>
-                 <ul class="space-y-3 list-disc text-gray-700 ml-4">
+                 <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Hobby & Interests</h2>
+                 <ul class="space-y-3 list-disc ml-4">
                     <li class="text-lg"><strong>Music Listening 🎶:</strong> Discovering new genres and artists, using music as a way to focus and relax during downtime.</li>
                     <li class="text-lg"><strong>Nature Photography & Hiking ⛰️:</strong> Spending time outdoors to capture landscapes and wildlife, combining physical activity with creative expression.</li>
                     <li class="text-lg"><strong>Gaming 🎮:</strong> Engaging in strategic multiplayer games to sharpen critical thinking, quick decision-making, and teamwork skills.</li>
@@ -333,57 +350,57 @@
             <!-- Contact Section (Initial hidden state with fade-in preparation) -->
 <section id="contact" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
-                <h2 class="text-3xl font-extrabold text-blue-900 text-stroke mb-4 border-b pb-2">Contact Me</h2>
-                <p class="text-gray-700 mb-6">I'm currently available for new opportunities. Feel free to reach out via any of the platforms below!</p>
+                <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Contact Me</h2>
+                <p class="mb-6">I'm currently available for new opportunities. Feel free to reach out via any of the platforms below!</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
                     <div class="space-y-4">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Direct Contact</h3>
+                        <h3 class="text-xl font-semibold text-gray-200 mb-3">Direct Contact</h3>
                         
                         
                         <div class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-600 mt-1 flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            <p class="text-gray-700 break-all">
-                                <span class="font-bold block text-sm text-gray-500">Email</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-400 mt-1 flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <p class="break-all">
+                                <span class="font-bold block text-sm text-gray-400">Email</span>
                                 <!-- UPDATED: Using the specific Gmail compose URL and target="_blank" -->
                                 <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbFTGmlGbKjVKzLwCXPflwZckSXcfktvgrnbftHcNwsrGFDlsnpjFkMDlmBqDcnxrWnSNr" 
                                    target="_blank" 
-                                   class="text-blue-600 hover:underline text-lg">haikaljrpro@gmail.com</a>
+                                   class="text-blue-400 hover:underline text-lg">haikaljrpro@gmail.com</a>
                             </p>
                         </div>
 
                         
                         <div class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-600 mt-1 flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <p class="text-gray-700">
-                                <span class="font-bold block text-sm text-gray-500">Phone Number</span>
-                                <a href="tel:+60143252403" class="text-blue-600 hover:underline text-lg">+60 143252403</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-400 mt-1 flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <p>
+                                <span class="font-bold block text-sm text-gray-400">Phone Number</span>
+                                <a href="tel:+60143252403" class="text-blue-400 hover:underline text-lg">+60 143252403</a>
                             </p>
                         </div>
                         
                         
                         <div class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-600 mt-1 flex-shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <p class="text-gray-700 text-lg">
-                                <span class="font-bold block text-sm text-gray-500">Location</span>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Kulim, Kedah, Malaysia" target="_blank" class="text-blue-600 hover:underline">Kulim, Kedah, Malaysia</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-blue-400 mt-1 flex-shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <p class="text-lg">
+                                <span class="font-bold block text-sm text-gray-400">Location</span>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kulim, Kedah, Malaysia" target="_blank" class="text-blue-400 hover:underline">Kulim, Kedah, Malaysia</a>
                             </p>
                         </div>
                     </div>
 
                     
                     <div class="space-y-4">
-                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Social Media</h3>
+                         <h3 class="text-xl font-semibold text-gray-200 mb-3">Social Media</h3>
                          
                          
-                         <a href="https://linkedin.com/in/ilmnhaikl" target="_blank" class="flex items-center text-blue-700 hover:text-blue-500 transition duration-150 text-lg">
+                         <a href="https://linkedin.com/in/ilmnhaikl" target="_blank" class="flex items-center text-blue-500 hover:text-blue-300 transition duration-150 text-lg">
                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                             <span class="underline">linkedin.com/in/ilmnhaikl</span>
                          </a>
 
                          
-                         <a href="https://www.instagram.com/ilmnhaikl__?igsh=MXN1aW9leHZ1dTRmeQ==" target="_blank" class="flex items-center text-pink-600 hover:text-pink-400 transition duration-150 text-lg">
+                         <a href="https://www.instagram.com/ilmnhaikl__?igsh=MXN1aW9leHZ1dTRmeQ==" target="_blank" class="flex items-center text-pink-500 hover:text-pink-300 transition duration-150 text-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                             Instagram (@ilmnhaikl__)
                          </a>
@@ -395,7 +412,7 @@
                          </a>
                          
                          
-                         <a href="https://www.tiktok.com/@ilmnhaikl?_r=1&_t=ZS-919KVHQzUoc" target="_blank" class="flex items-center text-gray-800 hover:text-gray-600 transition duration-150 text-lg">
+                         <a href="https://www.tiktok.com/@ilmnhaikl?_r=1&_t=ZS-919KVHQzUoc" target="_blank" class="flex items-center text-gray-200 hover:text-gray-400 transition duration-150 text-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                             TikTok (@ilmnhaikl)
                          </a>
@@ -407,7 +424,7 @@
     </div>
 
     <!-- Footer -->
-<footer class="bg-gray-800 text-white p-6 mt-auto">
+<footer class="bg-gray-900 text-white p-6 mt-auto">
         <div class="container mx-auto text-center text-sm">
             
             <p>&copy; 2025 ILMAN SPACE. All rights reserved.</p>
