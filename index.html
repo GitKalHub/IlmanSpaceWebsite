@@ -6,7 +6,7 @@
     <title>Ilman Haikal Personal Website</title>
     
     <!-- Load Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Load Space Mono Font for a Space/Tech Theme -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -54,7 +54,10 @@
             /* Dark background (gray-900 equivalent) with slight transparency */
             background-color: rgba(17, 24, 39, 0.80); 
             color: #d1d5db; /* Default light text color (gray-300) */
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            
+            /* UPDATED: Reduced transition duration to 0.3s for snappier feel */
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            
             border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle futuristic border */
         }
         
@@ -158,26 +161,26 @@
 <body id="top" class="min-h-screen flex flex-col">
 
     <!-- Video Background -->
-<video autoplay muted loop id="video-background">
+    <video autoplay muted loop id="video-background">
         <!-- NOTE: Optimize this video file (<5MB recommended) -->
         <source src="video-page.mp4" type="video/mp4"> 
         Your browser does not support the video tag.
     </video>
 
     <!-- Header & Navigation -->
-<header class="bg-gray-900 text-white p-4 shadow-2xl fixed top-0 left-0 right-0 z-40">
+    <header class="bg-gray-900 text-white p-4 shadow-2xl fixed top-0 left-0 right-0 z-40">
         <div class="container mx-auto flex justify-between items-center">
             
             <!-- Dynamic Gradient Text Applied Here -->
             <h1 id="header-title" class="text-2xl font-bold cursor-default transition duration-300 header-gradient-text">WELCOME TO ILMAN SPACE 🛰️</h1>
             
             <!-- Mobile Menu Toggle -->
-<button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
             
             <!-- Desktop Navigation -->
-<nav id="desktop-nav" class="hidden md:flex space-x-2 lg:space-x-4 items-center text-sm lg:text-base desktop-nav">
+            <nav id="desktop-nav" class="hidden md:flex space-x-2 lg:space-x-4 items-center text-sm lg:text-base desktop-nav">
                 <a href="#about" class="nav-link active hover:text-blue-400 p-2 rounded-md transition duration-150">About</a>
                 <a href="#skills" class="nav-link hover:text-blue-400 p-2 rounded-md transition duration-150">Skills</a>
                 <a href="#experience" class="nav-link hover:text-blue-400 p-2 rounded-md transition duration-150">Experience</a>
@@ -190,7 +193,7 @@
     </header>
 
     <!-- Mobile Menu Sidebar -->
-<nav id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-50 p-6 shadow-xl md:hidden">
+    <nav id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-50 p-6 shadow-xl md:hidden">
         <div class="flex justify-end">
             <button id="close-menu" class="text-white hover:text-red-400 p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -209,16 +212,16 @@
 
 
     <!-- Main Content Area -->
-<div class="mt-20 container mx-auto my-6 p-4 flex-grow">
+    <div class="mt-20 container mx-auto my-6 p-4 flex-grow">
 
         <main class="space-y-8">
 
             <!-- About Section (Default visible state) -->
-<section id="about" class="content-page p-8 rounded-xl shadow-lg opacity-100 transform translate-y-0">
+            <section id="about" class="content-page p-8 rounded-xl shadow-lg opacity-100 transform translate-y-0">
                 <div class="flex flex-col md:flex-row gap-6 items-start">
                     
                     <!-- Profile Picture (NOTE: Optimize 'Profile Photo.jpg' for web, use ~100kb) -->
-<img src="Profile Photo.jpg" 
+                    <img src="Profile Photo.jpg" 
                          alt="Mohamad Ilman Haikal Profile Photo" 
                          class="w-36 h-36 md:w-48 md:h-48 rounded-lg object-cover flex-shrink-0 border-4 border-blue-900 shadow-xl"
                          onerror="this.onerror=null; this.src='https://placehold.co/128x128/3B82F6/ffffff?text=ILMAN+PHOTO';"
@@ -256,7 +259,7 @@
             </section>
 
             <!-- Skills Section -->
-<section id="skills" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
+            <section id="skills" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
                 <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Skills</h2>
                 
@@ -314,7 +317,7 @@
             </section>
             
             <!-- Experience Section -->
-<section id="experience" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
+            <section id="experience" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
                 <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Experience</h2>
                 
@@ -357,7 +360,7 @@
             </section>
 
             <!-- Education Section -->
-<section id="education" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
+            <section id="education" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
                 <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Education</h2>
                 
@@ -430,7 +433,7 @@
             </section>
 
             <!-- Resume Section -->
-<section id="resume" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
+            <section id="resume" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
                 <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">My Resume</h2>
                 <p class="leading-relaxed mb-6">
@@ -448,7 +451,7 @@
             </section>
 
             <!-- Hobby Section (UPDATED: Music Player & Image Added) -->
-<section id="hobby" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
+            <section id="hobby" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                  
                  <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Hobby & Interests</h2>
                  
@@ -567,7 +570,7 @@
             </section>
 
             <!-- Contact Section -->
-<section id="contact" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
+            <section id="contact" class="content-page p-8 rounded-xl shadow-lg hidden opacity-0 transform translate-y-4">
                 
                 <h2 class="text-3xl font-bold text-stroke mb-4 border-b border-gray-700 pb-2">Contact Me</h2>
                 <p class="mb-6">I'm currently available for new opportunities. Feel free to reach out via any of the platforms below!</p>
@@ -642,7 +645,7 @@
     </div>
 
     <!-- Footer -->
-<footer class="bg-gray-900 text-white p-6 mt-auto">
+    <footer class="bg-gray-900 text-white p-6 mt-auto">
         <div class="container mx-auto text-center text-sm">
             
             <p>&copy; 2025 ILMAN SPACE. All rights reserved.</p>
@@ -650,14 +653,19 @@
     </footer>
 
     <!-- JavaScript for Navigation, Transitions, and Music Player -->
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const closeMenu = document.getElementById('close-menu');
             const contentPages = document.querySelectorAll('.content-page');
             const navLinks = document.querySelectorAll('.nav-link');
-            const transitionDuration = 500; // Matches CSS transition duration
+            
+            // UPDATED: Reduced duration to 300ms
+            const transitionDuration = 300; 
+            
+            // UPDATED: Lock flag to prevent glitching
+            let isTransitioning = false;
             
             // --- Music Player Elements ---
             const musicToggleBtn = document.getElementById('music-toggle-btn');
@@ -702,10 +710,16 @@
 
             // --- Page Switching Logic (Updated for Transitions) ---
             const switchPage = (targetId) => {
+                // UPDATED: Check if transition is already happening
+                if (isTransitioning) return;
+
                 const currentPage = document.querySelector('.content-page:not(.hidden)');
                 const targetPage = document.querySelector(targetId);
 
                 if (currentPage === targetPage) return;
+
+                // UPDATED: Lock transitions
+                isTransitioning = true;
 
                 // Stop music if leaving the Hobby page
                 if (currentPage && currentPage.id === 'hobby' && audioPlayer && !audioPlayer.paused) {
@@ -744,12 +758,18 @@
                             
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
+                        
+                        // UPDATED: Release the lock after the switch is complete
+                        // We allow a small buffer or release immediately after swapping
+                        isTransitioning = false;
+
                     }, transitionDuration); 
 
                 } else if (targetPage) {
                     // Initial load: just show the target (if not already showing)
                     targetPage.classList.remove('hidden', 'opacity-0', 'translate-y-4');
                     targetPage.classList.add('opacity-100', 'translate-y-0');
+                    isTransitioning = false;
                 }
             };
 
